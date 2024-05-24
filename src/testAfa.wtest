@@ -1,0 +1,33 @@
+import afa.*
+
+test "test messi y bombonera" {
+	homenaje.precioEntrada(10000)
+	homenaje.precioAcordado(5000000)
+	bombonera.alquiler(5000000)
+	bombonera.capacidad(50000)
+
+
+	assert.that(homenaje.entradasAVender(bombonera,messi) == 49000)
+	assert.that(homenaje.recaudacionEntradas(bombonera,messi) == 490000000)
+	assert.that(homenaje.gananciaNeta(bombonera,messi) == 470000000 )
+	assert.that(homenaje.aPagarAlJugador(messi) == 15000000)
+	
+
+}
+
+test "test mbappe y monumental" {
+	homenaje.precioEntrada(10000)
+	homenaje.precioAcordado(5000000)
+	monumental.alquiler(5000000)
+	monumental.hayObras(false)
+	mbappe.edad(28)
+	mbappe.golesHechos(14)
+
+
+	assert.that(homenaje.entradasAVender(monumental,mbappe) == 56000)
+	assert.that(homenaje.recaudacionEntradas(monumental,mbappe) == 560000000)
+	assert.that(homenaje.gananciaNeta(monumental,mbappe) == 560000000 - 13000000 )
+	assert.that(homenaje.aPagarAlJugador(mbappe) == 8000000)
+	
+
+}
